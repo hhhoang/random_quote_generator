@@ -14,6 +14,10 @@ main {
     font-family: 'Lato', sans-serif;
 }
 
+a:hover {
+    opacity: 0.7;
+}
+
 #container {
     background-color: cornflowerblue;
     display: flex;
@@ -25,7 +29,7 @@ main {
 
 section {
     background-color: white;
-    max-width: 50vw;
+    width: 50vw;
     height: auto;
     border-radius: 1em;
 }
@@ -112,6 +116,9 @@ section {
 @media only screen and (max-width: 600px) {
     #container {
         flex-direction: column;
+    }
+    section {
+        width: 70vw;
     }
     .flex-container {
         flex-direction: column;
