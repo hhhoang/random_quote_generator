@@ -3,6 +3,9 @@
     box-sizing: border-box;
 }
 
+
+/* TO-DO: fix quote box */
+
 body,
 main {
     margin: 0;
@@ -22,29 +25,51 @@ main {
 
 section {
     background-color: white;
-    padding: 30% 30%;
-    border-radius: 15px;
+    max-width: 50vw;
+    height: auto;
+    border-radius: 1em;
 }
 
 #quote-box {
-    padding: 2em 1em;
+    padding: 2em 2em;
     display: flex;
     flex-direction: column;
 }
 
 #quote-box div {
-    padding: 1.2em;
+    padding: 0.7em;
 }
 
 #text {
     color: cornflowerblue;
-    font-size: 1.5em;
+    font-size: 1.6em;
     line-height: 1.3em;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+#text:before {
+    content: open-quote;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
 }
 
 #author {
+    margin-top: 0;
+    font-size: 1.2em;
     text-align: right;
     color: cornflowerblue;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
 }
 
 .button {
@@ -54,8 +79,7 @@ section {
     padding: 1em 2em;
     text-align: center;
     text-decoration: none;
-    float: right;
-    border-radius: 25px;
+    border-radius: 2em;
 }
 
 
@@ -83,4 +107,37 @@ section {
 .fa-facebook {
     background: cornflowerblue;
     color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    #container {
+        flex-direction: column;
+    }
+    .flex-container {
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+    }
+    .social-media {
+        flex-direction: column;
+    }
+    #text {
+        font-size: 1.2em;
+        line-height: 1.3em;
+        text-align: center;
+    }
+    #text:before {
+        font-size: 2em;
+    }
+    #author {
+        font-size: 1em;
+        text-align: center;
+    }
+    button {
+        padding: 0.5em 1em;
+    }
+    /* social media icons */
+    .fa {
+        margin-bottom: 0.5em;
+    }
 }

@@ -1,4 +1,4 @@
-let colors = ["#00a8cc", "#81f5ff", "#ff7c7c", "#a8e6cf", "#61d4b3", "#efb1ff", "#ffa34d", "#698474", "#ffa41b", "#b590ca"];
+let colors = ["#00a8cc", "#ff7c7c", "#61d4b3", "#efb1ff", "#ffa34d", "#698474", "#ffa41b", "#b590ca"];
 var quoteJsonData;
 // get the quote data
 function getQuotesData() {
@@ -24,8 +24,11 @@ function getQuotesData() {
 function populateQuoteAndAuthor(quoteList) {
     if (quoteList != null) {
         let randomNumber = getRandomNumber(quoteList);
-        $("#text").html(quoteList[randomNumber].quote);
-        $("#author").html(quoteList[randomNumber].author);
+        let text = quoteList[randomNumber].quote;
+        let author = quoteList[randomNumber].author;
+        $("#text").html(text);
+        $("#author").html("<span> - </span>" + author);
+        shareOnSocialMedia(text, author);
     } else {
         $("#text").html("Sorry, we are unable to retrieve quotes.");
     }
@@ -48,6 +51,15 @@ function changeColor() {
     $(".fa-twitter").css("background", colors[randomNumber]);
     $(".fa-facebook").css("background", colors[randomNumber]);
 
+}
+
+// TO-DO: share button
+function shareOnSocialMedia(text, author) {
+    let content = "https://twitter.com/intent/tweet?text="
+    content += encodeURIComponent('"' + text + '" ' + author + '.');
+    content += encodeURIComponent(' More on https://letsbeinspired.netlify.app/.');
+    $("#tweet-quote").attr("href", content);
+    $("#facebook-quote").attr("href", '//facebook.com/sharer/sharer.php?u=' + window.location.href);
 }
 
 $(document).ready(function() {

@@ -14,16 +14,14 @@
 <body>
     <main id="container">
         <section id="quote-box">
-            <div>
-                <h4 id="text"></h4>
-            </div>
-            <div>
-                <p id="author"></p>
-            </div>
-            <div>
-                <a href="twitter.com/intent/tweet" id="tweet-quote" class="fa fa-twitter"></a>
-                <a href="twitter.com/intent/tweet" id="facebook-quote" class="fa fa-facebook"></a>
-                <a href="" id="new-quote" onclick="newQuote()" class="button"> New quote</a>
+            <h4 id="text"></h4>
+            <p id="author"></p>
+            <div class="flex-container">
+                <div class="social-media">
+                    <a href="twitter.com/intent/tweet" id="tweet-quote" class="fa fa-twitter"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank" id="facebook-quote" class="fa fa-facebook"></a>
+                </div>
+                <a href="" id="new-quote" class="button"> New quote</a>
             </div>
         </section>
     </main>
